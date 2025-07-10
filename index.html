@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMB International - Courier Services</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Use the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        /* Hide all page sections by default */
+        main > section {
+            display: none;
+        }
+        /* Show the active page */
+        main > section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-slate-100">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center cursor-pointer" onclick="navigateTo('home')">
+                    <!-- SVG Logo -->
+                    <svg class="h-10 w-auto" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 10L20 40L30 10L40 40L50 10" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M60 40V10H80" stroke="#0369a1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M60 25H75" stroke="#0369a1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M90 40V10L110 40V10" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <text x="120" y="35" font-family="Arial, sans-serif" font-size="30" fill="#0c4a6e" font-weight="bold">JMB</text>
+                    </svg>
+                    <span class="ml-3 text-2xl font-bold text-slate-800">JMB International</span>
+                </div>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-baseline space-x-4">
+                    <a href="#home" class="nav-link px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300">About</a>
+                    <a href="#services" class="nav-link px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300">Services</a>
+                    <a href="#reviews" class="nav-link px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300">Reviews</a>
+                    <a href="#contact" class="nav-link px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#services" class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="#reviews" class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium">Reviews</a>
+                <a href="#contact" class="nav-link-mobile block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Page Section -->
+        <section id="home" class="page-section fade-in">
+            <div class="relative h-[60vh] min-h-[400px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1587560699334-cc4263443cf1?q=80&w=2070&auto=format&fit=crop')">
+                <div class="absolute inset-0 bg-slate-900 bg-opacity-60"></div>
+                <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Fast & Reliable Courier Services</h1>
+                    <p class="text-lg md:text-xl max-w-3xl mb-8">From local deliveries to international shipping, JMB International delivers your parcels with speed and care.</p>
+                    <button onclick="navigateTo('contact')" class="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                        Get a Quote
+                    </button>
+                </div>
+            </div>
+            <div class="py-16 bg-slate-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-slate-800">Why Choose Us?</h2>
+                        <p class="mt-2 text-lg text-slate-600">Service you can trust, at a price you can afford.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-sky-100 text-sky-600 mx-auto mb-4"><i data-lucide="truck" class="w-8 h-8"></i></div>
+                            <h3 class="text-xl font-semibold text-slate-800 mb-2">Express Delivery</h3>
+                            <p class="text-slate-600">Lightning-fast delivery for your urgent packages, both locally and nationwide.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-sky-100 text-sky-600 mx-auto mb-4"><i data-lucide="globe" class="w-8 h-8"></i></div>
+                            <h3 class="text-xl font-semibold text-slate-800 mb-2">International Shipping</h3>
+                            <p class="text-slate-600">Seamlessly connect with the world through our reliable global network.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-sky-100 text-sky-600 mx-auto mb-4"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+                            <h3 class="text-xl font-semibold text-slate-800 mb-2">Secure Handling</h3>
+                            <p class="text-slate-600">Your packages are treated with the utmost care and security from pickup to delivery.</p>
+                        </div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-sky-100 text-sky-600 mx-auto mb-4"><i data-lucide="clock" class="w-8 h-8"></i></div>
+                            <h3 class="text-xl font-semibold text-slate-800 mb-2">Real-Time Tracking</h3>
+                            <p class="text-slate-600">Stay updated with live tracking of your shipment every step of the way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page Section -->
+        <section id="about" class="page-section fade-in">
+            <div class="py-16 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-extrabold text-slate-800 tracking-tight">About JMB International</h1>
+                        <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">Delivering Promises, Not Just Packages</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop" alt="Our team working" class="rounded-lg shadow-xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Image+Not+Found';">
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-sky-700 mb-4">Our Mission</h2>
+                            <p class="text-slate-600 mb-4 leading-relaxed">At JMB International, our mission is simple: to provide a courier service that is not only efficient and reliable but also transparent and customer-focused. We understand the importance of each parcel and are committed to ensuring its safe and timely arrival.</p>
+                            <p class="text-slate-600 mb-6 leading-relaxed">Founded in Indore, we have grown from a local service to a trusted name in domestic and international logistics, driven by our passion for excellence and dedication to our clients.</p>
+                            <div class="bg-slate-50 p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-slate-800 mb-3">Meet the Proprietor</h3>
+                                <p class="font-bold text-slate-700">Narendra Prajapati</p>
+                                <p class="text-slate-600 italic">"With years of experience in the logistics industry, I founded JMB International to fill a gap for a truly personal and dependable courier service. We're not just a company; we're your partners in logistics."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Page Section -->
+        <section id="services" class="page-section fade-in">
+            <div class="py-16 bg-slate-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-extrabold text-slate-800 tracking-tight">Our Services</h1>
+                        <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">Tailored solutions for all your shipping needs.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://images.pexels.com/photos/7709249/pexels-photo-7709249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Domestic Express" class="h-56 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Service+Image';">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <i data-lucide="truck" class="w-10 h-10 text-sky-600"></i>
+                                    <h3 class="text-2xl font-bold text-slate-800 ml-4">Domestic Express</h3>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">The fastest way to send documents and parcels to any corner of India. Guaranteed next-day delivery to major cities.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://images.pexels.com/photos/4481258/pexels-photo-4481258.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="International Shipping" class="h-56 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Service+Image';">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <i data-lucide="globe" class="w-10 h-10 text-sky-600"></i>
+                                    <h3 class="text-2xl font-bold text-slate-800 ml-4">International Shipping</h3>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">Connect your business to the world. We offer competitive rates and reliable delivery to over 220 countries.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Same-Day City Delivery" class="h-56 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Service+Image';">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <i data-lucide="clock" class="w-10 h-10 text-sky-600"></i>
+                                    <h3 class="text-2xl font-bold text-slate-800 ml-4">Same-Day City Delivery</h3>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">For your most urgent local shipments within Indore. We'll pick up and deliver within hours.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://images.pexels.com/photos/7005295/pexels-photo-7005295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Secure & High-Value Cargo" class="h-56 w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Service+Image';">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <i data-lucide="shield-check" class="w-10 h-10 text-sky-600"></i>
+                                    <h3 class="text-2xl font-bold text-slate-800 ml-4">Secure & High-Value Cargo</h3>
+                                </div>
+                                <p class="text-slate-600 leading-relaxed">Specialized handling for your valuable or sensitive items, with enhanced security and insurance options.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Page Section -->
+        <section id="reviews" class="page-section fade-in">
+            <div class="py-16 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-extrabold text-slate-800 tracking-tight">Customer Reviews</h1>
+                        <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">What our clients are saying about us.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-50 p-6 rounded-lg shadow-md border-l-4 border-sky-500">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <p class="font-bold text-lg text-slate-800">Anjali Sharma</p>
+                                    <p class="text-sm text-slate-500">Mumbai</p>
+                                </div>
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 italic">"Absolutely fantastic service! My package reached Delhi from Indore in less than 24 hours. The tracking was accurate, and the staff was very professional. Highly recommended!"</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg shadow-md border-l-4 border-sky-500">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <p class="font-bold text-lg text-slate-800">Vikram Singh</p>
+                                    <p class="text-sm text-slate-500">Indore</p>
+                                </div>
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 italic">"I use JMB for all my business shipments. They are reliable, affordable, and always on time. Mr. Prajapati is very helpful and provides excellent customer service."</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg shadow-md border-l-4 border-sky-500">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <p class="font-bold text-lg text-slate-800">Priya Patel</p>
+                                    <p class="text-sm text-slate-500">USA</p>
+                                </div>
+                                <div class="flex">
+                                    <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i><i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i><i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i><i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-current"></i><i data-lucide="star" class="w-5 h-5 text-slate-300"></i>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 italic">"Sent a gift to my family in India. The international shipping process was smooth, though customs took a day longer than expected. Overall, a very good experience."</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg shadow-md border-l-4 border-sky-500">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <p class="font-bold text-lg text-slate-800">Rajesh Kumar</p>
+                                    <p class="text-sm text-slate-500">Bhopal</p>
+                                </div>
+                                <div class="flex text-yellow-400">
+                                    <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 italic">"The best courier service in Indore, hands down. Their same-day delivery is a lifesaver for my small business. Very trustworthy."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page Section -->
+        <section id="contact" class="page-section fade-in">
+            <div class="py-16 bg-slate-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-extrabold text-slate-800 tracking-tight">Get In Touch</h1>
+                        <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600">We're here to help. Contact us for quotes, queries, or to schedule a pickup.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h2 class="text-2xl font-bold text-slate-800 mb-6">Office Information</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <i data-lucide="map-pin" class="text-sky-600 mt-1 mr-4 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-slate-700">Address</h3>
+                                        <p class="text-slate-600">BLG-5A, Swadesh Bhawan, Near Dainik Bhaskar, A.B. Road, Indore, Madhya Pradesh 452001</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-lucide="phone" class="text-sky-600 mt-1 mr-4 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-slate-700">Proprietor Contact</h3>
+                                        <p class="text-slate-600">Narendra Prajapati</p>
+                                        <a href="tel:8109911035" class="text-sky-600 hover:text-sky-800">+91 8109911035</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i data-lucide="mail" class="text-sky-600 mt-1 mr-4 flex-shrink-0"></i>
+                                    <div>
+                                        <h3 class="font-semibold text-lg text-slate-700">Email</h3>
+                                        <a href="mailto:contact@jmbinternational.com" class="text-sky-600 hover:text-sky-800">contact@jmbinternational.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-lg shadow-lg overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.038890875326!2d75.8885638753062!3d22.7271958793817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd61632d4d0b%3A0x209d0a7965955694!2sSwadesh%20Bhawan!5e0!3m2!1sen!2sin!4v1720612182962!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-800 text-slate-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">JMB International</h3>
+                    <p class="text-sm">Your trusted partner for fast, reliable, and secure courier services across the globe.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#home" class="hover:text-sky-400 transition-colors duration-300" onclick="navigateTo('home', event)">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="hover:text-sky-400 transition-colors duration-300" onclick="navigateTo('about', event)">About</a></li>
+                        <li class="mb-2"><a href="#services" class="hover:text-sky-400 transition-colors duration-300" onclick="navigateTo('services', event)">Services</a></li>
+                        <li class="mb-2"><a href="#contact" class="hover:text-sky-400 transition-colors duration-300" onclick="navigateTo('contact', event)">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                    <p class="flex items-start mb-2 text-sm"><i data-lucide="map-pin" class="w-4 h-4 mr-2 mt-1 flex-shrink-0"></i><span>BLG-5A, Swadesh Bhawan, Near Dainik Bhaskar, A.B. Road, Indore</span></p>
+                    <p class="flex items-center mb-2 text-sm"><i data-lucide="phone" class="w-4 h-4 mr-2"></i><span>+91 8109911035</span></p>
+                    <p class="flex items-center text-sm"><i data-lucide="mail" class="w-4 h-4 mr-2"></i><span>contact@jmbinternational.com</span></p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Business Hours</h3>
+                    <p class="text-sm">Monday - Friday: 9am - 7pm</p>
+                    <p class="text-sm">Saturday: 10am - 5pm</p>
+                    <p class="text-sm">Sunday: Closed</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-slate-700 text-center text-sm">
+                <p>&copy; 2024 JMB International. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Navigation and Mobile Menu Logic ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+            const pageSections = document.querySelectorAll('.page-section');
+
+            // Function to handle page navigation
+            window.navigateTo = function(pageId, event) {
+                if(event) event.preventDefault();
+                
+                // Hide all sections
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Show the target section
+                const targetSection = document.getElementById(pageId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+
+                // Update active link styles for desktop
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-sky-600', 'text-white');
+                    link.classList.add('text-slate-700', 'hover:bg-sky-100', 'hover:text-sky-700');
+                    if(link.getAttribute('href') === `#${pageId}`) {
+                        link.classList.add('bg-sky-600', 'text-white');
+                        link.classList.remove('text-slate-700', 'hover:bg-sky-100', 'hover:text-sky-700');
+                    }
+                });
+                
+                // Update active link styles for mobile
+                mobileNavLinks.forEach(link => {
+                    link.classList.remove('bg-sky-600', 'text-white');
+                    link.classList.add('text-slate-700', 'hover:bg-sky-100', 'hover:text-sky-700');
+                    if(link.getAttribute('href') === `#${pageId}`) {
+                        link.classList.add('bg-sky-600', 'text-white');
+                        link.classList.remove('text-slate-700', 'hover:bg-sky-100', 'hover:text-sky-700');
+                    }
+                });
+
+                // Close mobile menu after navigation
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.innerHTML = '<i data-lucide="menu" class="h-6 w-6"></i>';
+                
+                // Scroll to top of page
+                window.scrollTo(0, 0);
+
+                // Re-render icons after DOM change
+                lucide.createIcons();
+            }
+
+            // Set initial page
+            navigateTo('home');
+
+            // Event listener for mobile menu toggle
+            mobileMenuButton.addEventListener('click', function() {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                if (isHidden) {
+                    this.innerHTML = '<i data-lucide="menu" class="h-6 w-6"></i>';
+                } else {
+                    this.innerHTML = '<i data-lucide="x" class="h-6 w-6"></i>';
+                }
+                lucide.createIcons();
+            });
+
+            // Add click listeners to all nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const pageId = this.getAttribute('href').substring(1);
+                    navigateTo(pageId, e);
+                });
+            });
+
+            // Initial render of all Lucide icons
+            lucide.createIcons();
+        });
+    </script>
+
+</body>
+</html>
